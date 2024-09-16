@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class KafkaConsumer {
 
-    @KafkaListener(topics = "${kafka.topic}", containerFactory = "consumerFactory")
+    @KafkaListener(topics = "${kafka.topic}", containerFactory = "kafkaListenerContainerFactory")
     public void processEvent(String message) {
         log.info("Received message in topic : {}", message);
     }
